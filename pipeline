@@ -1,0 +1,26 @@
+##first DevSecOps pipelins#
+##first get code from github, #then get the code scanned from sonarqube##
+
+pipeline {
+    agent any
+    enviornment{
+        SONAR_HOME=tool "Sonar"
+    }
+    stages{
+        stage("Code clone from GitHub"){
+            steps{
+                git url: "https://github.com/ankitambarte/firstproject.git", branch: "main"
+            }
+        }
+        stage("SonarQube Quality Analysis"){
+            steps{
+                withSonarQubeEnv("Sonar"){
+                    sh "$SONAR_HOME/bin/sonar-scanner -Dsonar.projetName=wanderlust -Dsonar.projectKey=wandelust"
+                }
+                
+            }
+        }
+        stage("Test"){}
+        stage("Deploy"){}
+    }
+}
