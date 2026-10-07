@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: we got the code
-        run: echo" code is here"
+        run: echo " code is here"
    
   build:
     needs: code
