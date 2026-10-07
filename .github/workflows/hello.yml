@@ -1,16 +1,19 @@
 name: hello user
+#name of the step
 
 on:
   push:
     branches: [main]
-
+#trigger this action when changes are pushed to main branch
 jobs:
-
+#workflow consists to musliple jobs and under Jobs steps are there
     greet:
         runs-on: ubuntu-latest
         steps: 
           - name: say hello to user
             run: echo " hello user "
+# this is th first step
+
     treat:
         runs-on: ubuntu-latest
         steps:
