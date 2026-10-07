@@ -4,13 +4,21 @@ on:
   workflow_dispatch: 
 #this is used to provide manual gates 
 jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: we got the code
+        run: echo" code is here"
    
   build:
+    needs: code
     runs-on: ubuntu-latest
     steps:
       - name: build java application
         run: echo " building java app "
   test:
+    needs: build
+    #needs command is used to create dependancy 
     runs-on: ubuntu-latest
     steps:
       - name: testig the code
