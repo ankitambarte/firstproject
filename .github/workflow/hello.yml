@@ -10,11 +10,11 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
           - name: say hello to user
-          - run: echo " hello user "
+            run: echo " hello user "
     treat:
         runs-on: ubuntu-latest
         steps:
           - name: show python version
-          - run: python --version
+            run: python --version
 
           
