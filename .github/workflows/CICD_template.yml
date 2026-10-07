@@ -1,0 +1,18 @@
+name: CICD Teamplate
+
+on: 
+  workflow_dispatch: 
+
+jobs:
+   
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build java application
+        run: echo " building java app "
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: testig the code
+        run: runnning test case
+        
