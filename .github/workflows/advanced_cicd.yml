@@ -28,7 +28,7 @@ jobs:
         run: echo " builing package"
 
   deploy:
-    if: inputs.environment == "dev"
+    if: ${{ inputs.environment == 'dev' }}
     needs: build
     runs-on: ubuntu-latest
     steps:
