@@ -29,5 +29,5 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: deploy to env:
+      - name: deploy to env
         run:  echo " deploying to selected env"
