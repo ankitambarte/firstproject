@@ -21,12 +21,14 @@ jobs:
         run: echo " wriring code"
 
   build:
+    needs: code
     runs-on: ubuntu-latest
     steps:
       - name: build package
         run: echo " builing package"
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: deploy to env
