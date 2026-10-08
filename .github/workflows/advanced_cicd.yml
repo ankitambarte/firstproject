@@ -1,0 +1,33 @@
+name: Advanced CICD
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description:  This is environment value where workflow runs
+        default: " dev "
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+          - staging
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: write code
+        run: echo " wriring code"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build package
+        run: echo " builing package"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy to env:
+        run:  echo " deploying to selected env"
